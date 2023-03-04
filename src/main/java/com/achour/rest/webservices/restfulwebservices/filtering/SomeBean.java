@@ -1,16 +1,18 @@
 package com.achour.rest.webservices.restfulwebservices.filtering;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 // @JsonIgnoreProperties({"field1", "field2"}) //another way to filter fields to return in json response
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
 
 	private String field1;
 	
-	@JsonIgnore
 	private String field2;
 	
+	//@JsonIgnore
 	private String field3;
 	public SomeBean(String field1, String field2, String field3) {
 		super();
